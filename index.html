@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cuestionario Guerra de Golfo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h2 { color: darkred; }
+    .pregunta { margin-bottom: 25px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+    .respuesta { width: 100%; padding: 5px; margin-top: 5px; }
+    .correcto { color: green; font-weight: bold; margin-top: 5px; }
+    .incorrecto { color: red; font-weight: bold; margin-top: 5px; }
+    button { margin-top: 20px; padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h2>Cuestionario: Guerra de Golfo</h2>
+  <form id="cuestionario"></form>
+
+  <script>
+    const preguntas = [
+    ["¿Qué país invadió Kuwait el 2 de agosto de 1990?", "Irak"],
+    ["¿Quién era el presidente de Estados Unidos durante la Guerra del Golfo?", "George H. Bush"],
+    ["¿Cuál fue la operación militar inicial de defensa lanzada por Estados Unidos tras la invasión de Kuwait?", "Escudo del Desierto"],
+    ["¿Qué nombre recibió la ofensiva terrestre de la coalición contra Irak?", "Tormenta del Desierto"],
+    ["¿Qué resolución del Consejo de Seguridad de la ONU autorizó el uso de la fuerza contra Irak?", "Resolución 665"],
+    ["¿Cuál fue la principal acusación de Irak contra Kuwait antes de la invasión?", "Perforación inclinada del yacimiento Rumaila"],
+    ["¿Quién fue el comandante de las fuerzas de la coalición durante la Guerra del Golfo?", "General H. Norman Schwarzkopf"],
+    ["¿Qué cuerpo militar de élite comandaba Saddam Hussein?", "Guardia Republicana Iraquí"],
+    ["¿Qué porcentaje del poder combatiente de Irak fue destruido durante la ofensiva terrestre?", "75%"],
+    ["¿Qué doctrina estadounidense justificó la intervención militar en defensa de los intereses petroleros?", "Doctrina Carter"],
+    ["¿Qué país lideró la coalición multinacional contra Irak?", "Estados Unidos"],
+    ["¿Cuál fue el motivo económico principal de la invasión iraquí a Kuwait?", "Control de las reservas petroleras"],
+    ["¿Qué organismo internacional impuso sanciones económicas a Irak tras la invasión?", "Consejo de Seguridad de la ONU"],
+    ["¿Qué nombre recibió la estrategia aérea inicial basada en misiles Tomahawk y ataques aéreos?", "Strike Warfare"],
+    ["¿Qué país condicionó su apoyo a la coalición a que Israel no respondiera militarmente?", "Arabia Saudita"],
+    ["¿Qué fecha marcó el fin del conflicto con el cese al fuego?", "28 de febrero de 1991"],
+    ["¿Qué tipo de guerra destacó por su uso de velocidad, sorpresa y tecnología en este conflicto?", "Guerra de tercera generación"],
+    ["¿Qué país apoyó diplomáticamente a Irak y luego sufrió consecuencias económicas por ello?", "Jordania"],
+    ["¿Cuántos soldados movilizó Irak para invadir Kuwait?", "100.000 soldados"],
+    ["¿Qué porcentaje del abastecimiento al teatro de operaciones fue realizado por vía marítima?", "90%"],
+    ["¿Qué nombre recibió la estrategia estadounidense para controlar el mar y apoyar la ofensiva terrestre?", "Campaña Marítima"],
+    ["¿Qué país fue acusado por Irak de 'robar petróleo' mediante perforaciones inclinadas?", "Kuwait"],
+    ["¿Qué resolución de la ONU declaró nula la anexión de Kuwait por parte de Irak?", "Resolución 662"],
+    ["¿Qué fuerza aérea lideró la campaña aérea durante la guerra?", "Fuerza Aérea de los Estados Unidos (USAF)"],
+    ["¿Cuántos misiles lanzó Irak contra Israel durante el conflicto?", "8 misiles"],
+    ["¿Qué tecnología fue clave para la superioridad aliada en inteligencia y precisión?", "Satélites, armas inteligentes y visores infrarrojos"],
+    ["¿Qué general estadounidense fue presidente del Estado Mayor Conjunto durante la guerra?", "General Colin Powell"],
+    ["¿Qué líder militar saudí comandó las fuerzas conjuntas de la coalición árabe?", "Príncipe Khalid Ibn Sultán"],
+    ["¿Qué operación aliada consistió en el despliegue masivo previo al ataque terrestre?", "Escudo del Desierto"],
+    ["¿Qué tipo de guerra utilizó Irak con mayor éxito en el conflicto naval?", "Guerra de minas"],
+    ["¿Qué puerto fue clave como base naval iraquí durante la guerra?", "Puerto Umm Qasr"],
+    ["¿Qué país se convirtió en refugio de algunas unidades navales kuwaitíes durante la invasión?", "Bahréin"],
+    ["¿Qué fuerza fue destruida casi por completo por la coalición en tres semanas?", "La Armada de Irak"],
+    ["¿Qué término se usó para describir los estrechos estratégicos marítimos controlados por la coalición?", "Chokepoints"],
+    ["¿Qué operación incluyó ataques con misiles Tomahawk desde submarinos y buques?", "Tormenta del Desierto"],
+    ["¿Qué estrategia utilizó la coalición para atraer la atención de Irak a la costa, facilitando la maniobra terrestre?", "Amenaza de desembarco anfibio"],
+    ["¿Qué país árabe proporcionó el principal apoyo logístico y territorial para las fuerzas de la coalición?", "Arabia Saudita"],
+    ["¿Qué conflicto regional reciente había dejado a la economía de Irak en ruinas antes de la guerra?", "La guerra Irán-Irak"],
+    ["¿Qué doctrina militar estadounidense reemplazó a 'On the Sea' tras la Guerra del Golfo?", "From the Sea"],
+    ["¿Qué porcentaje del petróleo mundial transita por los chokepoints del Golfo Pérsico?", "Más del 20%"]
+];
+
+
+    
+
+
+    const form = document.getElementById("cuestionario");
+    preguntas.forEach(([pregunta], i) => {
+      form.innerHTML += `
+        <div class="pregunta">
+          <label><strong>${i + 1}. ${pregunta}</strong></label><br>
+          <input type="text" class="respuesta" id="respuesta${i}">
+          <button type="button" onclick="verificarRespuesta(${i})">Verificar</button>
+          <div id="feedback${i}"></div>
+        </div>
+      `;
+    });
+
+    function verificarRespuesta(index) {
+      const userInput = document.getElementById(`respuesta${index}`).value.trim();
+      const feedback = document.getElementById(`feedback${index}`);
+      const respuestaCorrecta = preguntas[index][1];
+
+      if (userInput === respuestaCorrecta) {
+        feedback.innerHTML = "✅ <span class='correcto'>Correcto</span>";
+      } else {
+        feedback.innerHTML = `❌ <span class='incorrecto'>Incorrecto. Respuesta esperada: ${respuestaCorrecta}</span>`;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -18,121 +18,114 @@
   <form id="cuestionario"></form>
 
   <script>
-    const preguntas = [
-    ["¿Qué país invadió Kuwait el 2 de agosto de 1990?", "Irak"],
-    ["¿Quién era el presidente de Estados Unidos durante la Guerra del Golfo?", "George H. Bush"],
-    ["¿Cuál fue la operación militar inicial de defensa lanzada por Estados Unidos tras la invasión de Kuwait?", "Escudo del Desierto"],
-    ["¿Qué nombre recibió la ofensiva terrestre de la coalición contra Irak?", "Tormenta del Desierto"],
-    ["¿Qué resolución del Consejo de Seguridad de la ONU autorizó el uso de la fuerza contra Irak?", "Resolución 665"],
-    ["¿Cuál fue la principal acusación de Irak contra Kuwait antes de la invasión?", "Perforación inclinada del yacimiento Rumaila"],
-    ["¿Quién fue el comandante de las fuerzas de la coalición durante la Guerra del Golfo?", "General H. Norman Schwarzkopf"],
-    ["¿Qué cuerpo militar de élite comandaba Saddam Hussein?", "Guardia Republicana Iraquí"],
-    ["¿Qué porcentaje del poder combatiente de Irak fue destruido durante la ofensiva terrestre?", "75%"],
-    ["¿Qué doctrina estadounidense justificó la intervención militar en defensa de los intereses petroleros?", "Doctrina Carter"],
-    ["¿Qué país lideró la coalición multinacional contra Irak?", "Estados Unidos"],
-    ["¿Cuál fue el motivo económico principal de la invasión iraquí a Kuwait?", "Control de las reservas petroleras"],
-    ["¿Qué organismo internacional impuso sanciones económicas a Irak tras la invasión?", "Consejo de Seguridad de la ONU"],
-    ["¿Qué nombre recibió la estrategia aérea inicial basada en misiles Tomahawk y ataques aéreos?", "Strike Warfare"],
-    ["¿Qué país condicionó su apoyo a la coalición a que Israel no respondiera militarmente?", "Arabia Saudita"],
-    ["¿Qué fecha marcó el fin del conflicto con el cese al fuego?", "28 de febrero de 1991"],
-    ["¿Qué tipo de guerra destacó por su uso de velocidad, sorpresa y tecnología en este conflicto?", "Guerra de tercera generación"],
-    ["¿Qué país apoyó diplomáticamente a Irak y luego sufrió consecuencias económicas por ello?", "Jordania"],
-    ["¿Cuántos soldados movilizó Irak para invadir Kuwait?", "100.000 soldados"],
-    ["¿Qué porcentaje del abastecimiento al teatro de operaciones fue realizado por vía marítima?", "90%"],
-    ["¿Qué nombre recibió la estrategia estadounidense para controlar el mar y apoyar la ofensiva terrestre?", "Campaña Marítima"],
-    ["¿Qué país fue acusado por Irak de 'robar petróleo' mediante perforaciones inclinadas?", "Kuwait"],
-    ["¿Qué resolución de la ONU declaró nula la anexión de Kuwait por parte de Irak?", "Resolución 662"],
-    ["¿Qué fuerza aérea lideró la campaña aérea durante la guerra?", "Fuerza Aérea de los Estados Unidos (USAF)"],
-    ["¿Cuántos misiles lanzó Irak contra Israel durante el conflicto?", "8 misiles"],
-    ["¿Qué tecnología fue clave para la superioridad aliada en inteligencia y precisión?", "Satélites, armas inteligentes y visores infrarrojos"],
-    ["¿Qué general estadounidense fue presidente del Estado Mayor Conjunto durante la guerra?", "General Colin Powell"],
-    ["¿Qué líder militar saudí comandó las fuerzas conjuntas de la coalición árabe?", "Príncipe Khalid Ibn Sultán"],
-    ["¿Qué operación aliada consistió en el despliegue masivo previo al ataque terrestre?", "Escudo del Desierto"],
-    ["¿Qué tipo de guerra utilizó Irak con mayor éxito en el conflicto naval?", "Guerra de minas"],
-    ["¿Qué puerto fue clave como base naval iraquí durante la guerra?", "Puerto Umm Qasr"],
-    ["¿Qué país se convirtió en refugio de algunas unidades navales kuwaitíes durante la invasión?", "Bahréin"],
-    ["¿Qué fuerza fue destruida casi por completo por la coalición en tres semanas?", "La Armada de Irak"],
-    ["¿Qué término se usó para describir los estrechos estratégicos marítimos controlados por la coalición?", "Chokepoints"],
-    ["¿Qué operación incluyó ataques con misiles Tomahawk desde submarinos y buques?", "Tormenta del Desierto"],
-    ["¿Qué estrategia utilizó la coalición para atraer la atención de Irak a la costa, facilitando la maniobra terrestre?", "Amenaza de desembarco anfibio"],
-    ["¿Qué país árabe proporcionó el principal apoyo logístico y territorial para las fuerzas de la coalición?", "Arabia Saudita"],
-    ["¿Qué conflicto regional reciente había dejado a la economía de Irak en ruinas antes de la guerra?", "La guerra Irán-Irak"],
-    ["¿Qué doctrina militar estadounidense reemplazó a 'On the Sea' tras la Guerra del Golfo?", "From the Sea"],
-    ["¿Qué porcentaje del petróleo mundial transita por los chokepoints del Golfo Pérsico?", "Más del 20%"],
-    ["¿Qué país invadió Kuwait el 2 de agosto de 1990?", "Irak"],
-    ["¿Qué país fue invadido, desatando la Guerra del Golfo?", "Kuwait"],
-    ["¿Quién era el presidente de Irak durante la Guerra del Golfo?", "Saddam Hussein"],
-    ["¿Qué principal acusación hizo Irak contra Kuwait antes de la invasión?", "Perforación inclinada del yacimiento petrolero Rumaila"],
-    ["¿Qué guerra debilitó la economía iraquí antes del conflicto?", "La guerra Irán-Irak"],
-    ["¿Qué resolución del Consejo de Seguridad declaró nula la anexión de Kuwait?", "Resolución del 9 de agosto de 1990"],
-    ["¿Qué país lideró la coalición internacional para liberar Kuwait?", "Estados Unidos"],
-    ["¿Qué resolución de la ONU, emitida el 29 de noviembre de 1990, autorizó el uso de la fuerza si Irak no se retiraba?", "Resolución 678"],
-    ["¿Cuántos países integraron aproximadamente la coalición contra Irak?", "Más de 30 países"],
-    ["¿Qué país árabe fue clave para el despliegue de las fuerzas de la coalición?", "Arabia Saudita"],
-    ["¿Qué doctrina estadounidense justificó la intervención para proteger el Golfo Pérsico?", "Doctrina Carter"],
-    ["¿Qué resolución de la ONU impuso sanciones económicas a Irak tras el conflicto en 1993?", "Resoluciones posteriores al conflicto (en especial bajo el capítulo VII)"],
-    ["¿Qué operación comenzó el 9 de agosto de 1990 para defender Arabia Saudita?", "Operación Escudo del Desierto"],
-    ["¿Entre qué fechas transcurrió el conflicto inicial desde la invasión hasta el primer ataque aéreo?", "Del 2 de agosto de 1990 al 16 de enero de 1991"],
-    ["¿Qué operación se lanzó el 17 de enero de 1991, iniciando los ataques aéreos?", "Operación Tormenta del Desierto"],
-    ["¿Qué fecha se firmó el alto al fuego definitivo?", "11 de abril de 1991"],
-    ["¿Cuánto duró la ofensiva terrestre para liberar Kuwait?", "100 horas"],
-    ["¿Qué tipo de guerra aplicó la coalición basada en velocidad y precisión?", "Guerra de tercera generación"],
-    ["¿Qué estrategia utilizó la coalición para engañar a Irak sobre el lugar del desembarco?", "Operaciones anfibias simuladas"],
-    ["¿Cuántas operaciones anfibias se planificaron para asegurar el control marítimo?", "Cinco"],
-    ["¿Qué sistema permitió navegación y coordinación precisa a las fuerzas aliadas?", "GPS"],
-    ["¿Qué tecnología permitió operaciones nocturnas exitosas durante la guerra?", "Visores nocturnos"],
-    ["¿Qué tipo de armamento guiado usó la coalición para atacar con precisión?", "Armas inteligentes"],
-    ["¿Qué sistema se usó para interferir comunicaciones enemigas?", "Guerra electrónica"],
-    ["¿Qué tipo de estrategia combinó aire, tierra y mar en las operaciones aliadas?", "Operaciones combinadas"],
-    ["¿Qué nombre recibió la estrategia aérea basada en bombardeos de precisión?", "Strike Warfare"],
-    ["¿Qué general estadounidense lideró las fuerzas de la coalición?", "General H. Norman Schwarzkopf"],
-    ["¿Qué documento cambió la estrategia de EE.UU. hacia un enfoque de alianzas?", "Doctrina “From the Sea” y revisión estratégica posterior a la guerra"],
-    ["¿Cuál fue el objetivo general de la campaña marítima aliada?", "Controlar el mar, bloquear Irak y apoyar las fuerzas terrestres"],
-    ["¿Cuáles fueron las 4 fases de la campaña marítima?", "1. Control del mar, 2. Interdicción naval, 3. Apoyo a tierra, 4. Protección de costas e infraestructura"],
-    ["¿Qué fuerza iraquí fue casi destruida completamente por los ataques marítimos?", "La Armada de Irak"],
-    ["¿Qué acción tomó Irak como represalia al retirarse de Kuwait?", "Incendió pozos petroleros"],
-    ["¿Qué impacto ambiental provocó la quema de pozos en Kuwait?", "Contaminación masiva y daño ecológico"],
-    ["¿Qué tipo de misiles lanzó Irak contra Israel y Arabia Saudita?", "Misiles Scud"],
-    ["¿Qué ciudad fue liberada por las fuerzas de la coalición tras la ofensiva?", "Kuwait"],
-    ["¿Qué cambió para EE.UU. después del conflicto en cuanto a alianzas militares?", "Se abandonó el enfoque unilateral y se priorizaron alianzas estratégicas"],
-    ["¿Qué país ganó más territorio terrestre tras la guerra en la delimitación con Kuwait?", "Irak (aunque cedió territorio marítimo)"],
-    ["¿Qué documento firmó Irak tras su derrota aceptando condiciones de paz?", "Alto al fuego de 1991 bajo supervisión de la ONU"],
-    ["¿Qué sanciones continuaron sobre Irak incluso después del fin del conflicto armado?", "Embargo económico y bloqueo de importaciones clave"],
-    ["¿Qué ciudad servía como base principal de logística aérea para la coalición?", "Dammam o Dharan, en Arabia Saudita"],
-    ["¿Qué elemento estratégico defendía EE.UU. en la región del Golfo?", "El suministro de petróleo"],
-    ["¿Qué efecto tuvo la guerra en la percepción mundial del poder militar estadounidense?", "Refuerzo de su imagen como potencia militar dominante"],
-    ["¿Qué evento fue clave para demostrar la eficacia del poder aéreo moderno?", "La campaña de bombardeos de precisión sobre Bagdad"],
-    ["¿Qué país fue atacado por misiles iraquíes pero no respondió militarmente por pedido de EE.UU.?", "Israel"],
-    ["¿Qué porcentaje estimado del poder combatiente iraquí fue destruido por la coalición?", "Aproximadamente 75%"],
-    ["¿Qué fecha exacta marcó el inicio de la ofensiva aérea aliada?", "17 de enero de 1991"]
-  ];
+const preguntas = [
+    ["¿Qué país invadió Kuwait el 2 de agosto de 1990?", "Irak", ["Arabia Saudita", "Irak", "Irán"]],
+    ["¿Quién era el presidente de Estados Unidos durante la Guerra del Golfo?", "George H. Bush", ["Bill Clinton", "George H. Bush", "Ronald Reagan"]],
+    ["¿Cuál fue la operación militar inicial de defensa lanzada por Estados Unidos tras la invasión de Kuwait?", "Escudo del Desierto", ["Tormenta del Desierto", "Strike Warfare", "Escudo del Desierto"]],
+    ["¿Qué nombre recibió la ofensiva terrestre de la coalición contra Irak?", "Tormenta del Desierto", ["Operación Libertad", "Tormenta del Desierto", "Escudo del Desierto"]],
+    ["¿Qué resolución del Consejo de Seguridad de la ONU autorizó el uso de la fuerza contra Irak?", "Resolución 678", ["Resolución 662", "Resolución 678", "Resolución 665"]],
+    ["¿Cuál fue la principal acusación de Irak contra Kuwait antes de la invasión?", "Perforación inclinada del yacimiento Rumaila", ["Robo de petróleo", "Bloqueo económico", "Perforación inclinada del yacimiento Rumaila"]],
+    ["¿Quién fue el comandante de las fuerzas de la coalición durante la Guerra del Golfo?", "General H. Norman Schwarzkopf", ["Príncipe Khalid Ibn Sultán", "General Colin Powell", "General H. Norman Schwarzkopf"]],
+    ["¿Qué cuerpo militar de élite comandaba Saddam Hussein?", "Guardia Republicana Iraquí", ["Fuerzas Especiales Iraquíes", "Guardia Republicana Iraquí", "Ejército Popular Iraquí"]],
+    ["¿Qué porcentaje del poder combatiente de Irak fue destruido durante la ofensiva terrestre?", "75%", ["90%", "50%", "75%"]],
+    ["¿Qué doctrina estadounidense justificó la intervención militar en defensa de los intereses petroleros?", "Doctrina Carter", ["Doctrina Powell", "Doctrina Monroe", "Doctrina Carter"]],
+    ["¿Qué país lideró la coalición multinacional contra Irak?", "Estados Unidos", ["Reino Unido", "Arabia Saudita", "Estados Unidos"]],
+    ["¿Cuál fue el motivo económico principal de la invasión iraquí a Kuwait?", "Control de las reservas petroleras", ["Acceso a recursos hídricos", "Control de las reservas petroleras", "Control del comercio marítimo"]],
+    ["¿Qué organismo internacional impuso sanciones económicas a Irak tras la invasión?", "Consejo de Seguridad de la ONU", ["Liga Árabe", "Consejo de Seguridad de la ONU", "OTAN"]],
+    ["¿Qué nombre recibió la estrategia aérea inicial basada en misiles Tomahawk y ataques aéreos?", "Strike Warfare", ["Escudo del Desierto", "Strike Warfare", "Tormenta del Desierto"]],
+    ["¿Qué país condicionó su apoyo a la coalición a que Israel no respondiera militarmente?", "Arabia Saudita", ["Jordania", "Egipto", "Arabia Saudita"]],
+    ["¿Qué fecha marcó el fin del conflicto con el cese al fuego?", "28 de febrero de 1991", ["17 de enero de 1991", "2 de agosto de 1990", "28 de febrero de 1991"]],
+    ["¿Qué tipo de guerra destacó por su uso de velocidad, sorpresa y tecnología en este conflicto?", "Guerra de tercera generación", ["Guerra asimétrica", "Guerra de cuarta generación", "Guerra de tercera generación"]],
+    ["¿Qué país apoyó diplomáticamente a Irak y luego sufrió consecuencias económicas por ello?", "Jordania", ["Yemen", "Siria", "Jordania"]],
+    ["¿Cuántos soldados movilizó Irak para invadir Kuwait?", "100.000 soldados", ["200.000 soldados", "50.000 soldados", "100.000 soldados"]],
+    ["¿Qué porcentaje del abastecimiento al teatro de operaciones fue realizado por vía marítima?", "90%", ["75%", "50%", "90%"]],
+    ["¿Qué nombre recibió la estrategia estadounidense para controlar el mar y apoyar la ofensiva terrestre?", "Campaña Marítima", ["Control del Golfo", "Operación Anfibia", "Campaña Marítima"]],
+    ["¿Qué país fue acusado por Irak de 'robar petróleo' mediante perforaciones inclinadas?", "Kuwait", ["Irán", "Kuwait", "Arabia Saudita"]],
+    ["¿Qué resolución de la ONU declaró nula la anexión de Kuwait por parte de Irak?", "Resolución 662", ["Resolución 665", "Resolución 662", "Resolución 678"]],
+    ["¿Qué fuerza aérea lideró la campaña aérea durante la guerra?", "Fuerza Aérea de los Estados Unidos (USAF)", ["Fuerza Aérea Saudita", "Royal Air Force (RAF)", "Fuerza Aérea de los Estados Unidos (USAF)"]],
+    ["¿Cuántos misiles lanzó Irak contra Israel durante el conflicto?", "39 misiles", ["15 misiles", "8 misiles", "39 misiles"]],
+    ["¿Qué tecnología fue clave para la superioridad aliada en inteligencia y precisión?", "Satélites, armas inteligentes y visores infrarrojos", ["Drones no tripulados", "Satélites, armas inteligentes y visores infrarrojos", "Inteligencia humana"]],
+    ["¿Qué general estadounidense fue presidente del Estado Mayor Conjunto durante la guerra?", "General Colin Powell", ["General Tommy Franks", "General H. Norman Schwarzkopf", "General Colin Powell"]],
+    ["¿Qué líder militar saudí comandó las fuerzas conjuntas de la coalición árabe?", "Príncipe Khalid Ibn Sultán", ["Príncipe Fahd bin Salman", "Príncipe Sultan bin Abdulaziz", "Príncipe Khalid Ibn Sultán"]],
+    ["¿Qué operación aliada consistió en el despliegue masivo previo al ataque terrestre?", "Escudo del Desierto", ["Operación Defensa", "Tormenta del Desierto", "Escudo del Desierto"]],
+    ["¿Qué tipo de guerra utilizó Irak con mayor éxito en el conflicto naval?", "Guerra de minas", ["Guerra submarina", "Guerra de superficie", "Guerra de minas"]],
+    ["¿Qué puerto fue clave como base naval iraquí durante la guerra?", "Puerto Umm Qasr", ["Puerto de Kuwait", "Puerto de Basora", "Puerto Umm Qasr"]],
+    ["¿Qué país se convirtió en refugio de algunas unidades navales kuwaitíes durante la invasión?", "Bahréin", ["Qatar", "Arabia Saudita", "Bahréin"]],
+    ["¿Qué fuerza fue destruida casi por completo por la coalición en tres semanas?", "La Armada de Irak", ["Fuerza Aérea Iraquí", "Guardia Republicana Iraquí", "La Armada de Irak"]],
+    ["¿Qué término se usó para describir los estrechos estratégicos marítimos controlados por la coalición?", "Chokepoints", ["Puntos de control", "Estrechos del Golfo", "Chokepoints"]],
+    ["¿Qué operación incluyó ataques con misiles Tomahawk desde submarinos y buques?", "Tormenta del Desierto", ["Strike Warfare", "Escudo del Desierto", "Tormenta del Desierto"]],
+    ["¿Qué estrategia utilizó la coalición para atraer la atención de Irak a la costa, facilitando la maniobra terrestre?", "Amenaza de desembarco anfibio", ["Operaciones combinadas", "Ataques aéreos masivos", "Amenaza de desembarco anfibio"]],
+    ["¿Qué país árabe proporcionó el principal apoyo logístico y territorial para las fuerzas de la coalición?", "Arabia Saudita", ["Kuwait", "Egipto", "Arabia Saudita"]],
+    ["¿Qué conflicto regional reciente había dejado a la economía de Irak en ruinas antes de la guerra?", "La guerra Irán-Irak", ["La guerra de Afganistán", "La guerra del Líbano", "La guerra Irán-Irak"]],
+    ["¿Qué doctrina militar estadounidense reemplazó a 'On the Sea' tras la Guerra del Golfo?", "From the Sea", ["Doctrina Powell", "Doctrina Carter", "From the Sea"]],
+    ["¿Qué porcentaje del petróleo mundial transita por los chokepoints del Golfo Pérsico?", "Más del 20%", ["30%", "10%", "Más del 20%"]],
+    ["¿Qué país fue invadido, desatando la Guerra del Golfo?", "Kuwait", ["Bahréin", "Arabia Saudita", "Kuwait"]],
+    ["¿Quién era el presidente de Irak durante la Guerra del Golfo?", "Saddam Hussein", ["Ahmed Hassan al-Bakr", "Nouri al-Maliki", "Saddam Hussein"]],
+    ["¿Qué guerra debilitó la economía iraquí antes del conflicto?", "La guerra Irán-Irak", ["La guerra de los Seis Días", "La guerra del Líbano", "La guerra Irán-Irak"]],
+    ["¿Qué resolución del Consejo de Seguridad declaró nula la anexión de Kuwait?", "Resolución 662", ["Resolución 665", "Resolución 678", "Resolución 662"]],
+    ["¿Qué resolución de la ONU, emitida el 29 de noviembre de 1990, autorizó el uso de la fuerza si Irak no se retiraba?", "Resolución 678", ["Resolución 660", "Resolución 687", "Resolución 678"]],
+    ["¿Cuántos países integraron aproximadamente la coalición contra Irak?", "Más de 30 países", ["50 países", "15 países", "Más de 30 países"]],
+    ["¿Qué doctrina estadounidense justificó la intervención para proteger el Golfo Pérsico?", "Doctrina Carter", ["Doctrina Eisenhower", "Doctrina Truman", "Doctrina Carter"]],
+    ["¿Qué operación comenzó el 9 de agosto de 1990 para defender Arabia Saudita?", "Operación Escudo del Desierto", ["Operación Defensa Árabe", "Operación Tormenta del Desierto", "Operación Escudo del Desierto"]],
+    ["¿Entre qué fechas transcurrió el conflicto inicial desde la invasión hasta el primer ataque aéreo?", "Del 2 de agosto de 1990 al 16 de enero de 1991", ["Del 1 de agosto al 15 de enero", "Del 2 de agosto al 17 de enero", "Del 2 de agosto de 1990 al 16 de enero de 1991"]],
+    ["¿Qué operación se lanzó el 17 de enero de 1991, iniciando los ataques aéreos?", "Operación Tormenta del Desierto", ["Operación Strike Warfare", "Operación Escudo del Desierto", "Operación Tormenta del Desierto"]],
+    ["¿Qué fecha se firmó el alto al fuego definitivo?", "11 de abril de 1991", ["1 de marzo de 1991", "28 de febrero de 1991", "11 de abril de 1991"]],
+    ["¿Cuánto duró la ofensiva terrestre para liberar Kuwait?", "100 horas", ["150 horas", "72 horas", "100 horas"]],
+    ["¿Qué estrategia utilizó la coalición para engañar a Irak sobre el lugar del desembarco?", "Operaciones anfibias simuladas", ["Agentes dobles", "Falsos mensajes de radio", "Operaciones anfibias simuladas"]],
+    ["¿Cuántas operaciones anfibias se planificaron para asegurar el control marítimo?", "Cinco", ["Siete", "Tres", "Cinco"]],
+    ["¿Qué sistema permitió navegación y coordinación precisa a las fuerzas aliadas?", "GPS", ["Radar terrestre", "GLONASS", "GPS"]],
+    ["¿Qué tecnología permitió operaciones nocturnas exitosas durante la guerra?", "Visores nocturnos", ["Faros infrarrojos", "Luces de bengala", "Visores nocturnos"]],
+    ["¿Qué tipo de armamento guiado usó la coalición para atacar con precisión?", "Armas inteligentes", ["Artillería convencional", "Misiles balísticos", "Armas inteligentes"]],
+    ["¿Qué sistema se usó para interferir comunicaciones enemigas?", "Guerra electrónica", ["Interceptación satelital", "Hackeo de redes", "Guerra electrónica"]],
+    ["¿Qué tipo de estrategia combinó aire, tierra y mar en las operaciones aliadas?", "Operaciones combinadas", ["Defensa en profundidad", "Guerra relámpago", "Operaciones combinadas"]],
+    ["¿Qué documento cambió la estrategia de EE.UU. hacia un enfoque de alianzas?", "Doctrina 'From the Sea'", ["Plan Powell", "Estrategia de Defensa Nacional", "Doctrina 'From the Sea'"]],
+    ["¿Cuál fue el objetivo general de la campaña marítima aliada?", "Controlar el mar, bloquear Irak y apoyar las fuerzas terrestres", ["Proteger el comercio petrolero", "Destruir la Armada iraquí", "Controlar el mar, bloquear Irak y apoyar las fuerzas terrestres"]],
+    ["¿Qué acción tomó Irak como represalia al retirarse de Kuwait?", "Incendió pozos petroleros", ["Minó el Golfo Pérsico", "Lanzó misiles Scud", "Incendió pozos petroleros"]],
+    ["¿Qué impacto ambiental provocó la quema de pozos en Kuwait?", "Contaminación masiva y daño ecológico", ["Cambio climático temporal", "Lluvia ácida regional", "Contaminación masiva y daño ecológico"]],
+    ["¿Qué tipo de misiles lanzó Irak contra Israel y Arabia Saudita?", "Misiles Scud", ["Misiles Patriot", "Misiles Tomahawk", "Misiles Scud"]],
+    ["¿Qué ciudad fue liberada por las fuerzas de la coalición tras la ofensiva?", "Kuwait", ["Bagdad", "Basora", "Kuwait"]],
+    ["¿Qué cambió para EE.UU. después del conflicto en cuanto a alianzas militares?", "Se abandonó el enfoque unilateral y se priorizaron alianzas estratégicas", ["Se enfatizó la guerra nuclear", "Se redujo el presupuesto militar", "Se abandonó el enfoque unilateral y se priorizaron alianzas estratégicas"]],
+    ["¿Qué documento firmó Irak tras su derrota aceptando condiciones de paz?", "Alto al fuego de 1991 bajo supervisión de la ONU", ["Acuerdo de desarme", "Tratado de paz con Kuwait", "Alto al fuego de 1991 bajo supervisión de la ONU"]],
+    ["¿Qué sanciones continuaron sobre Irak incluso después del fin del conflicto armado?", "Embargo económico y bloqueo de importaciones clave", ["Control militar directo", "Prohibición de viajes", "Embargo económico y bloqueo de importaciones clave"]],
+    ["¿Qué ciudad servía como base principal de logística aérea para la coalición?", "Dhahran", ["Doha", "Riad", "Dhahran"]],
+    ["¿Qué elemento estratégico defendía EE.UU. en la región del Golfo?", "El suministro de petróleo", ["Las rutas comerciales", "La seguridad de Israel", "El suministro de petróleo"]],
+    ["¿Qué efecto tuvo la guerra en la percepción mundial del poder militar estadounidense?", "Refuerzo de su imagen como potencia militar dominante", ["Indiferencia internacional", "Cuestionamiento de su superioridad", "Refuerzo de su imagen como potencia militar dominante"]],
+    ["¿Qué evento fue clave para demostrar la eficacia del poder aéreo moderno?", "La campaña de bombardeos de precisión sobre Bagdad", ["El bloqueo naval", "La destrucción de la Guardia Republicana", "La campaña de bombardeos de precisión sobre Bagdad"]],
+    ["¿Qué país fue atacado por misiles iraquíes pero no respondió militarmente por pedido de EE.UU.?", "Israel", ["Jordania", "Arabia Saudita", "Israel"]],
+    ["¿Qué fecha exacta marcó el inicio de la ofensiva aérea aliada?", "17 de enero de 1991", ["28 de febrero de 1991", "2 de agosto de 1990", "17 de enero de 1991"]]
+];
 
-    
+const form = document.getElementById("cuestionario");
+  preguntas.forEach(([pregunta, respuestaCorrecta, opciones], i) => {
+    form.innerHTML += `
+      <div class="pregunta">
+        <label><strong>${i + 1}. ${pregunta}</strong></label><br>
+        ${opciones
+          .map(
+            (opcion, j) =>
+              `<label><input type="radio" name="respuesta${i}" value="${opcion}"> ${opcion}</label><br>`
+          )
+          .join("")}
+        <button type="button" onclick="verificarRespuesta(${i}, '${respuestaCorrecta}')">Verificar</button>
+        <div id="feedback${i}"></div>
+      </div>
+    `;
+  });
 
-
-    const form = document.getElementById("cuestionario");
-    preguntas.forEach(([pregunta], i) => {
-      form.innerHTML += `
-        <div class="pregunta">
-          <label><strong>${i + 1}. ${pregunta}</strong></label><br>
-          <input type="text" class="respuesta" id="respuesta${i}">
-          <button type="button" onclick="verificarRespuesta(${i})">Verificar</button>
-          <div id="feedback${i}"></div>
-        </div>
-      `;
+  function verificarRespuesta(index, respuestaCorrecta) {
+    const opciones = document.getElementsByName(`respuesta${index}`);
+    let seleccion = "";
+    opciones.forEach((opcion) => {
+      if (opcion.checked) seleccion = opcion.value;
     });
 
-    function verificarRespuesta(index) {
-      const userInput = document.getElementById(`respuesta${index}`).value.trim();
-      const feedback = document.getElementById(`feedback${index}`);
-      const respuestaCorrecta = preguntas[index][1];
-
-      if (userInput === respuestaCorrecta) {
-        feedback.innerHTML = "✅ <span class='correcto'>Correcto</span>";
-      } else {
-        feedback.innerHTML = `❌ <span class='incorrecto'>Incorrecto. Respuesta esperada: ${respuestaCorrecta}</span>`;
-      }
+    const feedback = document.getElementById(`feedback${index}`);
+    if (seleccion === respuestaCorrecta) {
+      feedback.innerHTML = "✅ <span class='correcto'>Correcto</span>";
+    } else {
+      feedback.innerHTML = `❌ <span class='incorrecto'>Incorrecto. Respuesta esperada: ${respuestaCorrecta}</span>`;
     }
-  </script>
+  }
+</script>
 </body>
 </html>
